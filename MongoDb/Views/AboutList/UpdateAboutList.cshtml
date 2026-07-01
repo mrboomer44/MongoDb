@@ -1,0 +1,26 @@
+﻿@model MongoDb.Dtos.AboutListDto.GetAboutListByIdDto
+@{
+    ViewData["Title"] = "Madde Güncelle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Madde Güncelleme Sayfası</h4>
+            <form method="post" class="forms-sample">
+                <input type="hidden" asp-for="AboutListId" />
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Başlık">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">
+                    <i class="typcn typcn-tick"></i> Güncelle
+                </button>
+                <a href="/AboutList/AboutListList" class="btn btn-light">
+                    <i class="typcn typcn-times"></i> İptal
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

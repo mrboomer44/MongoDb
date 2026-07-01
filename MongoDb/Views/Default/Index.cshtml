@@ -1,0 +1,63 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body id="home">
+    <div class="body">
+        <!-- HEADER -->
+        @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+
+
+        <!-- Home -->
+        @await Component.InvokeAsync("_DefaultFeatureComponentPartial")
+
+        <!-- About Us -->
+        <div id="about" class="container">
+            <!-- About Section 1 -->
+            @await Component.InvokeAsync("_DefaultAboutSecion1ComponentPartial")
+
+            <!-- About Section 2 -->
+            @await Component.InvokeAsync("_DefaultAboutSecion2ComponentPartial")
+        </div>
+        <div class="space80"></div>
+
+
+        @await Component.InvokeAsync("_DefaultStoryVideoComponentPartial")
+
+
+
+        @await Component.InvokeAsync("_DefaultProductComponentPartial")
+        <div class="space100"></div>
+
+        <!-- Testimonials -->
+        @await Component.InvokeAsync("_DefaultTestimoialComponentPartial")
+
+        <!-- Faq -->
+        @await Component.InvokeAsync("_DefaultFaqComponentPartial")
+
+        <!-- Subscribe -->
+        @await Component.InvokeAsync("_DefaultSubcribeComponentPartial")
+        <div class="space80"></div>
+
+        <!-- FOOTER -->
+        @await Component.InvokeAsync("_DefaultFooterComponetPartial")
+
+        <!-- Copyright -->
+        @await Component.InvokeAsync("_DefaultCopyrigthComponentPartial")
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT =============================-->
+    @await Component.InvokeAsync("_DefaultScriptComponentPartial")
+</body>
+
+</html>

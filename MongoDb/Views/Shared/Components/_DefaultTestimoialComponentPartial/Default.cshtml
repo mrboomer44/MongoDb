@@ -1,0 +1,23 @@
+﻿@model List<MongoDb.Dtos.TestimonialDto.ResultTestimonialDto>
+<div id="reviews" class="testimonials-color">
+    <div class="container">
+        <div class="about-inline text-center">
+            <h3>Referanslar </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="quote2">
+                    @foreach (var item in Model)
+                    {
+                        <div>
+                            <img src="@item.ImageUrl" alt="" />
+                            <p>@item.Description</p>
+                            <span class="author">@item.NameSurnama - @item.Position</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="space100"></div>
+    </div>
+</div>

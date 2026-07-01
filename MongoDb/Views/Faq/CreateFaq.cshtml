@@ -1,0 +1,25 @@
+﻿@model MongoDb.Dtos.FaqDto.CreateFaqDto
+@{
+    ViewData["Title"] = "Yeni Soru Ekle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Soru Ekle</h4>
+            <form method="post" class="forms-sample">
+                <div class="form-group">
+                    <label>Soru</label>
+                    <input type="text" class="form-control" asp-for="Question" placeholder="Soruyu Giriniz">
+                </div>
+                <div class="form-group">
+                    <label>Cevap</label>
+                    <textarea class="form-control" asp-for="Answer" rows="4" placeholder="Cevabı Giriniz"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <a href="/Faq/FaqList" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

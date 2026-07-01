@@ -1,0 +1,41 @@
+﻿@model MongoDb.Dtos.TestimonialDto.GetTestimonialByIdDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Referans Güncelleme Sayfası</h4>
+
+            <form method="post" class="forms-sample">
+                <input type="hidden" asp-for="TestimonialId" />
+
+                <div class="form-group">
+                    <label>Referans Adı</label>
+                    <input type="text" class="form-control" asp-for="NameSurnama" placeholder="Referans Adı">
+                </div>
+                <div class="form-group">
+                    <label>Referans Mesleği</label>
+                    <input type="text" class="form-control" asp-for="Position" placeholder="Meslek">
+                </div>
+                <div class="form-group">
+                    <label>Referans Görseli</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Referans Görseli">
+                </div>
+                <div class="form-group">
+                    <label>Referans Yorumu</label>
+                    <textarea class="form-control" asp-for="Description" placeholder="Referans Yorumu" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">
+                    <i class="typcn typcn-tick"></i> Güncelle
+                </button>
+                <a href="/Testimonial/TestimonialList" class="btn btn-light">
+                    <i class="typcn typcn-times"></i> Vazgeç
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

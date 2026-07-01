@@ -1,0 +1,76 @@
+﻿@model List<MongoDb.Dtos.ProductDto.ResultProductDto>
+@{
+    ViewData["Title"] = "Ürünler";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    int i = 0;
+}
+
+<div class="row mb-4">
+    <div class="col-md-4 stretch-card grid-margin">
+        <div class="card bg-gradient-primary text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-white-50 mb-2">Toplam Ürün</h6>
+                        <h2 class="mb-0 text-white">@Model.Count</h2>
+                    </div>
+                    <i class="typcn typcn-shopping-cart" style="font-size: 48px; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="card-title mb-0">Ürünler Listesi</h4>
+                <a href="/Product/CreateProduct/" class="btn btn-inverse-info btn-fw">
+                    <i class="typcn typcn-plus"></i> Yeni Ürün Girişi
+                </a>
+            </div>
+
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ürün Adı</th>
+                            <th>Yapım Zamanı</th>
+                            <th>Güncel Fiyat</th>
+                            <th>Eski Fiyat</th>
+                            <th>Görsel</th>
+                            <th class="text-center">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            ++i;
+                            <tr>
+                                <td><span class="badge badge-light">@i</span></td>
+                                <td><strong>@item.ProductName</strong></td>
+                                <td>@item.TotlalTime</td>
+                                <td><span class="text-success fw-bold">@item.Price</span></td>
+                                <td><span class="text-danger"><del>@item.OldPrice</del></span></td>
+                                <td><img src="@item.ImageUrl" style="width:80px; height:60px; object-fit:cover; border-radius:8px;" /></td>
+                                <td class="text-center">
+                                    <a href="/Product/UpdateProduct/@item.ProductId" class="btn btn-inverse-warning btn-sm" title="Güncelle">
+                                        <i class="typcn typcn-edit"></i>
+                                    </a>
+                                    <a href="/Product/DeleteProduct/@item.ProductId"
+                                       class="btn btn-inverse-danger btn-sm"
+                                       onclick="return confirm('Silmek istediğinize emin misiniz?')"
+                                       title="Sil">
+                                        <i class="typcn typcn-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

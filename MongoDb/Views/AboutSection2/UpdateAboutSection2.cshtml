@@ -1,0 +1,34 @@
+﻿@model MongoDb.Dtos.AboutSection2Dto.UpdateAboutSection2Dto
+@{
+    ViewData["Title"] = "Bölüm 2 Güncelle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımızda Bölüm 2 Güncelleme</h4>
+            <form method="post" class="forms-sample">
+                <input type="hidden" asp-for="AboutSection2Id" />
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" asp-for="Description" rows="4" placeholder="Açıklama"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Görsel URL</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="https://...">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">
+                    <i class="typcn typcn-tick"></i> Güncelle
+                </button>
+                <a href="/AboutSection2/AboutSection2List" class="btn btn-light">
+                    <i class="typcn typcn-times"></i> İptal
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model MongoDb.Dtos.TestimonialDto.CreateTestimonialDto
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Referans Ekleme Sayfası</h4>
+
+            <form method="post" class="forms-sample">
+                <div class="form-group">
+                    <label>Referans Adı</label>
+                    <input type="text" class="form-control" asp-for="NameSurnama" placeholder="Ad Soyad">
+                </div>
+                <div class="form-group">
+                    <label>Pozisyon</label>
+                    <input type="text" class="form-control" asp-for="Position" placeholder="Pozisyon">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" asp-for="Description" rows="4" placeholder="Açıklama"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Referans Görseli</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Referans Görseli">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">
+                    <i class="typcn typcn-tick"></i> Kaydet
+                </button>
+                <a href="/Testimonial/TestimonialList" class="btn btn-light">
+                    <i class="typcn typcn-times"></i> Vazgeç
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

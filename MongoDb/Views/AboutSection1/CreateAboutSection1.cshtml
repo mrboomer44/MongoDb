@@ -1,0 +1,29 @@
+﻿@model MongoDb.Dtos.AboutSection1Dto.CreateAboutSection1Dto
+@{
+    ViewData["Title"] = "Bölüm 1 Ekle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımızda Bölüm 1 Ekle</h4>
+            <form method="post" class="forms-sample">
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Başlık Giriniz">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" asp-for="Description" rows="4" placeholder="Açıklama Giriniz"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Görsel URL</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="https://...">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <a href="/AboutSection1/AboutSection1List" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

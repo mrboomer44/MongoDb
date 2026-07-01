@@ -1,0 +1,77 @@
+﻿@model List<MongoDb.Dtos.LoginDto.ResultLoginDto>
+@{
+    ViewData["Title"] = "Yönetici Giriş Bilgileri";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    var adminUser = Model.FirstOrDefault();
+}
+
+<div class="col-lg-8 offset-lg-2 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="card-title mb-0">Yönetici Giriş Bilgileri</h4>
+            </div>
+            
+            @if (adminUser != null)
+            {
+                <div class="table-responsive pt-3">
+                    <table class="table table-striped table-bordered">
+                        <tbody>
+                            <tr>
+                                <th style="width: 30%;">Kullanıcı Adı</th>
+                                <td><strong>@adminUser.UserName</strong></td>
+                            </tr>
+                            <tr>
+                                <th>Şifre</th>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="password-field" id="pass-admin" data-password="@adminUser.Password">••••••••</span>
+                                        <button type="button" class="btn btn-link btn-sm text-secondary p-0" onclick="togglePassword()">
+                                            <i class="typcn typcn-eye" id="eye-admin" style="font-size: 18px;"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="text-right mt-4">
+                    <a href="/Login/UpdateLogin/@adminUser.LoginId" class="btn btn-inverse-warning btn-fw">
+                        <i class="typcn typcn-edit"></i> Giriş Bilgilerini Güncelle
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    Kayıtlı yönetici bilgisi bulunamadı. Lütfen yeni bir tane oluşturun.
+                </div>
+                <div class="text-right mt-4">
+                    <a href="/Login/CreateLogin" class="btn btn-inverse-info btn-fw">
+                        <i class="typcn typcn-plus"></i> Giriş Bilgisi Oluştur
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function togglePassword() {
+            var field = document.getElementById('pass-admin');
+            var eye = document.getElementById('eye-admin');
+            
+            if (field.innerText === '••••••••') {
+                field.innerText = field.getAttribute('data-password');
+                eye.classList.remove('typcn-eye');
+                eye.classList.add('typcn-eye-outline');
+            } else {
+                field.innerText = '••••••••';
+                eye.classList.remove('typcn-eye-outline');
+                eye.classList.add('typcn-eye');
+            }
+        }
+    </script>
+}

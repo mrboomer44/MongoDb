@@ -1,0 +1,119 @@
+<style>
+    .nav-category {
+        padding: 18px 20px 6px 20px !important;
+        pointer-events: none;
+    }
+    .nav-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        color: #f0a500 !important;
+        text-transform: uppercase;
+        opacity: 1 !important;
+    }
+    .menu-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
+    }
+</style>
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+
+        <li class="nav-item nav-category">
+            <span class="nav-label">ÜRÜN & İÇERİK</span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("ProductList", "Product")">
+                <i class="typcn typcn-shopping-cart menu-icon"></i>
+                <span class="menu-title">Ürünler</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("FeatureList", "Feature")">
+                <i class="typcn typcn-star-outline menu-icon"></i>
+                <span class="menu-title">Özellikler</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("FaqList", "Faq")">
+                <i class="typcn typcn-info-large menu-icon"></i>
+                <span class="menu-title">SSS</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("TestimonialList", "Testimonial")">
+                <i class="typcn typcn-user-outline menu-icon"></i>
+                <span class="menu-title">Referanslar</span>
+            </a>
+        </li>
+
+        <li class="nav-item nav-category">
+            <span class="nav-label">HAKKIMIZDA</span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("AboutListList", "AboutList")">
+                <i class="typcn typcn-th-list menu-icon"></i>
+                <span class="menu-title">Liste</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("AboutSection1List", "AboutSection1")">
+                <i class="typcn typcn-document-text menu-icon"></i>
+                <span class="menu-title">Bölüm 1</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("AboutSection2List", "AboutSection2")">
+                <i class="typcn typcn-document menu-icon"></i>
+                <span class="menu-title">Bölüm 2</span>
+            </a>
+        </li>
+
+        <li class="nav-item nav-category">
+            <span class="nav-label">MEDYA & SOSYAL</span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("StoryVideoList", "StoryVideo")">
+                <i class="typcn typcn-video menu-icon"></i>
+                <span class="menu-title">Hikaye Video</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("SocialMediaList", "SocialMedia")">
+                <i class="typcn typcn-social-at-circular menu-icon"></i>
+                <span class="menu-title">Sosyal Medya</span>
+            </a>
+        </li>
+
+        <li class="nav-item nav-category">
+            <span class="nav-label">SİPARİŞLER & ABONELER</span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("OrderList", "Order")">
+                <i class="typcn typcn-clipboard menu-icon"></i>
+                <span class="menu-title">Siparişler</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("SubscribeList", "Subscribe")">
+                <i class="typcn typcn-mail menu-icon"></i>
+                <span class="menu-title">Aboneler</span>
+            </a>
+        </li>
+
+        <li class="nav-item nav-category">
+            <span class="nav-label">AYARLAR & GÜVENLİK</span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("LoginList", "Login")">
+                <i class="typcn typcn-key menu-icon"></i>
+                <span class="menu-title">Giriş Bilgileri</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>
+

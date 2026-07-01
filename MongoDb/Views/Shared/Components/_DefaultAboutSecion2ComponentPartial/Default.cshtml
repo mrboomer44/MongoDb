@@ -1,0 +1,25 @@
+﻿@model MongoDb.Models.AboutSection2ViewModel
+
+<div class="intro intro-about2">
+    <div class="container">
+        <div class="row center-content">
+            <div class="col-md-5">
+                <h3>@Model.AboutSection2.Title</h3>
+                <p>@Model.AboutSection2.Description</p>
+
+                <ul class="list">
+                    @foreach (var item in Model.AboutList)
+                    {
+                        <li><i class="fa fa-check"></i> @item.Title</li>
+                    }
+                </ul>
+
+                <div class="space30"></div>
+                <a href="#" class="btn btn-lg btn-primary">Learn More <i class="icon-arrow-right"></i></a>
+            </div>
+            <div class="col-md-7">
+                <img src="@Model.AboutSection2.ImageUrl" class="pull-left img-responsive" alt="" />
+            </div>
+        </div>
+    </div>
+</div>

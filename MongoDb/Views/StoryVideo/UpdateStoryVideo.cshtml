@@ -1,0 +1,38 @@
+﻿@model MongoDb.Dtos.StoryVideoDto.UpdateStoryVideoDto
+@{
+    ViewData["Title"] = "Hikaye Video Güncelle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hikaye Video Güncelleme</h4>
+            <form method="post" class="forms-sample">
+                <input type="hidden" asp-for="StoryVideoId" />
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" asp-for="Description" rows="4" placeholder="Açıklama"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Video URL</label>
+                    <input type="text" class="form-control" asp-for="VideoUrl" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label>Görsel URL</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="https://...">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">
+                    <i class="typcn typcn-tick"></i> Güncelle
+                </button>
+                <a href="/StoryVideo/StoryVideoList" class="btn btn-light">
+                    <i class="typcn typcn-times"></i> İptal
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

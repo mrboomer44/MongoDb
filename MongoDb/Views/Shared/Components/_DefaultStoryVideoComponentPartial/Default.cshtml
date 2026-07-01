@@ -1,0 +1,15 @@
+﻿@model MongoDb.Dtos.StoryVideoDto.ResultStoryVideoDto
+
+
+<div class="video-action" style="background-image: url('@Model.ImageUrl'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="row text-center">
+        <h1>@Model.Title</h1>
+        <p>@Model.Description</p>
+        <br><br>
+        <a href="@Model.VideoUrl" class="swipebox-video">
+            <div class="intro-video-pop">
+                <i class="fa fa-play"></i> Watch Our Story
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@model List<MongoDb.Dtos.StoryVideoDto.ResultStoryVideoDto>
+@{
+    ViewData["Title"] = "Hikaye Video";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="card-title mb-0">Hikaye Video Bölümü</h4>
+                @if (!Model.Any())
+                {
+                    <a href="/StoryVideo/CreateStoryVideo" class="btn btn-inverse-success btn-fw">
+                        <i class="typcn typcn-plus"></i> İlk Veriyi Ekle
+                    </a>
+                }
+                else
+                {
+                    <a href="/StoryVideo/UpdateStoryVideo" class="btn btn-inverse-warning btn-fw">
+                        <i class="typcn typcn-edit"></i> Güncelle
+                    </a>
+                }
+            </div>
+            @if (Model.Any())
+            {
+                var item = Model.First();
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-bordered">
+                            <tr><th>Başlık</th><td>@item.Title</td></tr>
+                            <tr><th>Açıklama</th><td>@item.Description</td></tr>
+                            <tr><th>Video URL</th><td>@item.VideoUrl</td></tr>
+                            <tr><th>Görsel URL</th><td>@item.ImageUrl</td></tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="@item.ImageUrl" style="max-width:100%; max-height:250px; object-fit:cover; border-radius:10px;" />
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning">Henüz veri eklenmemiş.</div>
+            }
+        </div>
+    </div>
+</div>

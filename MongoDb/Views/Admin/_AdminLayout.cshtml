@@ -1,0 +1,79 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("AdminHeadComponentPartial")
+<body>
+    <div class="container-scroller">
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="navbar-brand-wrapper d-flex align-items-center">
+                <button class="navbar-toggler sidebar-toggle-btn mr-3" type="button" id="sidebarToggleBtn">
+                    <span class="typcn typcn-th-menu"></span>
+                </button>
+                <span class="brand-text">AdminPanel</span>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn-logout" href="/Admin/LogOut" title="Çıkış Yap">
+                            <i class="typcn typcn-eject"></i> Çıkış
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid page-body-wrapper">
+            @await Component.InvokeAsync("AdminSidebarComponentPartial")
+            <div class="sidebar-overlay"></div>
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @RenderBody()
+                </div>
+                <footer class="footer">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; 2026 MongoDb</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="/adminTemplate/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/adminTemplate/js/template.js"></script>
+    <script>
+        $(function() {
+            $('#sidebarToggleBtn').on('click', function() {
+                if ($(window).width() <= 991) {
+                    // Mobil: offcanvas sidebar aç/kapat
+                    $('.sidebar').toggleClass('active');
+                    $('.sidebar-overlay').toggleClass('active');
+                } else {
+                    // Masaüstü: sidebar'ı daralt/genişlet
+                    $('body').toggleClass('sidebar-icon-only');
+                }
+            });
+
+            $('.sidebar-overlay').on('click', function() {
+                $('.sidebar').removeClass('active');
+                $('.sidebar-overlay').removeClass('active');
+            });
+
+            $(window).on('resize', function() {
+                if ($(window).width() > 991) {
+                    $('.sidebar').removeClass('active');
+                    $('.sidebar-overlay').removeClass('active');
+                }
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

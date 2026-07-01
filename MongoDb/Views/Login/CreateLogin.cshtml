@@ -1,0 +1,32 @@
+﻿@model MongoDb.Dtos.LoginDto.CreateLoginDto
+@{
+    ViewData["Title"] = "Yeni Giriş Bilgisi Ekle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-8 offset-lg-2 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Giriş Bilgisi Ekle</h4>
+            <p class="card-description text-muted">Yönetici paneli giriş bilgilerini tanımlamak için aşağıdaki alanları doldurun.</p>
+            
+            <form method="post" class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="UserName">Kullanıcı Adı</label>
+                    <input type="text" class="form-control" asp-for="UserName" placeholder="Kullanıcı adını giriniz" required>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Şifre</label>
+                    <input type="password" class="form-control" asp-for="Password" placeholder="Güçlü bir şifre giriniz" required>
+                </div>
+                
+                <div class="text-right mt-4">
+                    <button type="submit" class="btn btn-primary mr-2">
+                        <i class="typcn typcn-arrow-right"></i> Kaydet
+                    </button>
+                    <a href="/Login/LoginList" class="btn btn-light">İptal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
