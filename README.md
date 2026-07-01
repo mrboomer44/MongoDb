@@ -59,10 +59,6 @@ Bu proje, **ASP.NET Core 8.0 MVC** ve **MongoDB** kullanılarak geliştirilmiş,
 6.  Tarayıcınızdan `http://localhost:5189` veya konsolda belirtilen porta giderek siteye erişebilirsiniz.
 7.  Admin paneline erişmek için URL sonuna `/Admin/Index` ekleyerek giriş ekranına ulaşabilirsiniz.
 
-## 🤝 Katkıda Bulunma
-
-Projeye katkıda bulunmak isterseniz, lütfen bir Pull Request gönderin veya karşılaştığınız sorunlar için bir Issue açın. Katkılarınız her zaman değerlidir!
-
 ## 📜 Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakabilirsiniz.
